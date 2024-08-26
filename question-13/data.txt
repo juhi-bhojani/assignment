@@ -1,0 +1,3 @@
+Memoization is a powerful optimization technique used in computer programming to speed up the execution of functions by caching their results.
+
+Memoization in js can be implemented using higher order function and use of objects, we cam check if the result is already computed and if  that is the case then directly return, else sotre it and then return

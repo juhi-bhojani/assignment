@@ -1,0 +1,6 @@
+Weird behaviours of javascript:
+
+1. Different behaviour of javascript when it comes to hoisting in var, let and const. 
+2. Ability to initialize a variable without declaration and it's behaviour as a property of the window object
+
+

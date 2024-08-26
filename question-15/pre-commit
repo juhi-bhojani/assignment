@@ -1,0 +1,6 @@
+#!/bin/bash
+# The commit message file passed to the script
+COMMIT_MSG_FILE=$1
+
+# Run the Node.js script for commit message validation
+node .git/hooks/validate-commit-msg.js "$COMMIT_MSG_FILE"

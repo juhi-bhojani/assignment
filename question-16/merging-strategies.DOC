@@ -1,0 +1,24 @@
+﻿Git will take two (or more) commit pointers and attempt to find a common base commit between them.Git has several different methods to find a base commit, these methods are called "merge strategies". Once Git finds a common base commit it will create a new "merge commit" that combines the changes of the specified merge commits.
+
+MERGE STRATEGIES IN GIT
+
+1. Fast Forward Merge:
+
+Fast-forward merge occurs when the target branch has not diverged from the source branch. In this case, Git simply moves the target branch pointer to the latest commit in the source branch.This strategy is simple and keeps the commit history linear.
+
+
+
+2. Recursive merge
+
+Recursive merge is Git’s default strategy for non-trivial merges. It handles cases where branches have diverged by creating a new merge commit. This commit records the combined changes from both branches, preserving the history of both lines of development.
+
+
+
+3. Squash and Merge
+Squash and merge squashes all the commits from a feature branch into a single commit before merging into the target branch. This strategy simplifies the commit history, making it easier to follow.
+
+
+4. Rebase and Merge
+Rebase and merge rewrites the commit history of the feature branch, placing it on top of the main branch before merging. This results in a linear commit history without merge commits.
+
+

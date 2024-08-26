@@ -1,0 +1,23 @@
+Git submodules allow you to keep a Git repository as a subdirectory of another Git repository. 
+When adding a submodule to a repository a new .gitmodules file will be created. 
+
+Git submodule is something like a repository inside another git repository.
+
+Steps to add a git submodule:
+1. git submodule add "link to github repository"
+2. git submodule status
+
+
+Why use git submodule?
+
+If you need to maintain a strict version management over your external dependencies,  it can make sense to use Git submodules. The following are a few best use cases for Git submodules.
+
+    a. When an external component or subproject is changing too fast or upcoming changes will break the API, you can lock the code to a specific commit for your own safety.
+    b. When you have a component that isn’t updated very often and you want to track it as a vendor dependency.
+    c. When you are delegating a piece of the project to a third party and you want to integrate their work at a specific time or release. Again this works when updates are not too frequent.
+
+
+Git submodule can also be used to make specific changes to an external library.
+It can also be used to divide a project into multiple component and integrate using git submodules
+
+

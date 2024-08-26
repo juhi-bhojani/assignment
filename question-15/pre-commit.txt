@@ -1,0 +1,4 @@
+Git hooks are scripts that run automatically every time a particular event occurs in a Git repository.
+The pre-commit script is executed every time you run git commit before Git asks the developer for a commit message or generates a commit object.
+
+It is possible to setup both local and global hooks in git.

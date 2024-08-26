@@ -1,0 +1,17 @@
+Commit squashing is the process of combining multiple commits into a single, more meaningful commit. 
+
+Steps to restructure commit history:
+
+STEP 1: Rebase to a previous desired commit with interactive mode
+            git rebase -i head~10 (refers to 10th commit before current)
+
+STEP 2: Pick a certain commit and they squash other commits necessary along with altering messages
+            git pick <commit-hash> <commit-message>
+            git squash <commit-hash> <commit-message>
+            git squash <commit-hash> <commit-message>
+        Git allows editing the final text message
+
+STEP 3: Force push to remote which will rewrite the history
+            git push --force
+
+

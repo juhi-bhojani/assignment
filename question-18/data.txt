@@ -1,0 +1,9 @@
+git reflog shows a log of all changes to the repository’s branches and can be used to locate the SHA-1 hash of the commit.
+
+Steps: 
+
+1. git reflog
+2. git checkout <branch-name>
+3. git cherry-pick <git-commit-SHA>
+or 
+3. git checkout -b <branch-name> <git-commit-SHA>

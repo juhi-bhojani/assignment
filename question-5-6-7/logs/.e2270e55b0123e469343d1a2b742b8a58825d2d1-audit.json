@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/home/juhi/Techs/assignment/question-5-6-7/logs/.e2270e55b0123e469343d1a2b742b8a58825d2d1-audit.json",
+    "files": [
+        {
+            "date": 1724481433064,
+            "name": "/home/juhi/Techs/assignment/question-5-6-7/logs/movie-2024-08-24.log",
+            "hash": "a1256085a89642a2cd68449d22c422b2b9edd311a1f372890110391a7715adb5"
+        }
+    ],
+    "hashType": "sha256"
+}

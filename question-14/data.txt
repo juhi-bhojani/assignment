@@ -1,0 +1,17 @@
+Backend Configuration File
+
+
+
+-- config
+    -- dev.env
+    -- prod.env     
+-- src
+    -- controllers
+    -- models
+    -- middlware
+    -- routes
+    -- index/app.js
+-- node_modules
+-- package.json
+-- package-lock.json
+-- .gitignore

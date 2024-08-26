@@ -1,0 +1,11 @@
+Throttling limits the number of times a function is executed over a certain time period.
+throttle uses the time delay to execute the callback function at regular intervals until the event trigger is active.
+
+
+Debouncing is a technique that delays the execution of a function until a certain amount of time has passed since the last event's occurrence.
+It delays the function invocation by a defined period of time to avoid unnecessary invocations.
+
+
+Use Cases:
+Throttling : handling scroll events or resizing events
+Debouncing : search suggestions

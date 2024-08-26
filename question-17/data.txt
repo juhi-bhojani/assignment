@@ -1,0 +1,10 @@
+Steps in order to remove the .env file from everywhere
+
+1.  add .env in the gitignore file
+2. git filter-branch --index-filter "git rm -rf --cached --ignore-unmatch .env" HEAD
+
+    Explanation of this command : 
+        -- git filter-branch rewrites the git histroy by applying filter to every commit
+        -- the --index-filter flag runs for each commit to remove the env file with recursize and force flags
+
+3. git push --force

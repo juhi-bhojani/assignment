@@ -1,4 +1,5 @@
 // a function used to maintain size of cache and remove elements which are used less frequently
+// just to depict usage in case of a limit needed for cache
 function limitSizeOfCache(cache,size){
     let min = 0
     let minKey
@@ -19,9 +20,9 @@ function memoize(func){
     return (...args) =>{
         const key = JSON.stringify(...args)
 
-        if(cache[key].result){
+        if(cache[key]){
             cache[key].count +=1
-            return cache[key]
+            return cache[key].result
         }
 
         const result = func(...args)

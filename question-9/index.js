@@ -32,4 +32,21 @@ const isAnagram = (str1,str2) =>{
     return true
 }
 
+// optimized approach 
+
+const isAnagrams = (str1,str2)=>{ 
+    // directly return false if not of same length 
+    if(str1.length!==str2.length){ 
+        return false 
+    }
+    // sort and compare 
+    str1 = str1.toLowerCase().split("").sort().join("") 
+    str2 = str2.toLowerCase().split("").sort().join("") 
+
+    if(str1===str2){ 
+        return true 
+    } 
+    return false 
+} 
+
 console.log(isAnagram("hello2","llohe2"))

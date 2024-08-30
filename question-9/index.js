@@ -8,7 +8,7 @@ const isAnagram = (str1,str2) =>{
     str1 = str1.toLowerCase()
     str2 = str2.toLowerCase()
     const freq = {}
-    for(alphabet of str1){
+    for(let alphabet of str1){
         if(alphabet.match(/[a-z]/i)){
             if (!freq[alphabet]){
                 freq[alphabet] = 0
@@ -16,7 +16,7 @@ const isAnagram = (str1,str2) =>{
             freq[alphabet]+=1
         }
     }
-    for(alphabet of str2){
+    for(let alphabet of str2){
         if(alphabet.match(/[a-z]/i)){
             if(!freq[alphabet]){
                 return false
@@ -24,7 +24,7 @@ const isAnagram = (str1,str2) =>{
             freq[alphabet]-=1
         }
     }
-    for(key in freq){
+    for(let key in freq){
         if (freq[key]!==0){
             return false
         }

@@ -1,6 +1,6 @@
 const refineString = (str) =>{
     let refinedString = ""
-    for(alphabet of str){
+    for(let alphabet of str){
         if(alphabet.match(/[a-z]/i)){
             refinedString = refinedString.concat(alphabet)
         }

@@ -8,3 +8,8 @@ const numOfVowels = (str) =>{
     }
     return num
 }
+
+// optimized approach
+const numOfVowel = (str) => {
+    return str.toLowerCase().split('').reduce((acc,ele)=>"aeiou".includes(ele) ? ++acc : acc,0)
+}

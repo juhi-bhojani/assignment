@@ -56,12 +56,13 @@ router.post("/refresh",async(req,res)=>{
         if(user.email!==email){
             throw new Error()
         }
-        const token = await user.generateAuthToken()
-        res.send({
-            email:user.email,
-            name:user.name,
-            ...token
-        })
+        const accessToken = await user.refreshToken() 
+        res.send({ 
+            email:user.email, 
+            name:user.name, 
+            accessToken, 
+            refreshToken 
+        }) 
 
     }
     catch(e){

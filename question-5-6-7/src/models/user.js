@@ -51,6 +51,15 @@ userSchema.methods.generateAuthToken = async function(){
     return {accessToken,refreshToken}
 }
 
+// methods are available on instance of models  
+
+userSchema.methods.refreshToken = async function(){ 
+    const user = this 
+    // first argument is payload, second is secret  
+    const accessToken= jwt.sign({id:user._id.toString()},secretKey,{expiresIn:"1h"}) 
+    return accessToken 
+} 
+
 
 // static method are available on models
 // adding a static method to verify credentials

@@ -1,60 +1,51 @@
-const fs = require("fs")
-const { text } = require("stream/consumers")
+// Promisify fs module
+const fs = require("fs").promises;
 
-const data = {}
-
-// reading data from files asynchronously
-fs.readFile("input-1.txt",'utf-8',(err,text)=>{
-    if(err){
-        return console.log("err")
+// Reading data from files asynchronously
+async function readFile(fileName) {
+    try {
+        const text = await fs.readFile(fileName, 'utf-8');
+        return {
+            [fileName]: text
+        };
+    } catch (e) {
+        console.log(`Unable to read file ${fileName}: ${e.message}`);
+        return {};
     }
-    data['inputFile1'] = text
-})
+}
 
-fs.readFile("input-2.txt",'utf-8',(err,text)=>{
-    if(err){
-        return console.log("err")
+// Reading data from API asynchronously
+async function fetchData(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP Error! Status: ${response.status}`);
+        }
+        const text = await response.json();
+        return {
+            [url]: text
+        };
+    } catch (e) {
+        console.log(`Error fetching from ${url}: ${e.message}`);
+        return {};
     }
-    data['inputFile2'] = text
-})
+}
 
-fs.readFile("input-3.txt",'utf-8',(err,text)=>{
-    if(err){
-        return console.log("err")
+async function run() {
+    try {
+        // Run everything asynchronously
+        const data = await Promise.allSettled([
+            readFile("input-3.txt"),
+            readFile("input-1.txt"),
+            readFile("input-2.txt"),
+            fetchData("https://dattebayo-api.onrender.com/characters"),
+            fetchData("https://dogapi.dog/api/v2/breeds")
+        ]);
+
+        console.log(data);
+    } catch (e) {
+        console.log(`Error occurred: ${e.message}`);
     }
-    data['inputFile3'] = text
-})
+}
 
-// fetching data from API's
-fetch("https://dogapi.dog/api/v2/breeds")
-.then((response)=>{
-    return response.json()
-})
-.then((text)=>{
-    data['dogInfo'] = text.data
-})
-.catch(err=>{
-    console.log(err)
-})
-
-fetch("https://dogapi.dog/api/v2/breeds")
-.then((response)=>{
-    return response.json()
-})
-.then((text)=>{
-    data['meowInfo'] = text.data
-})
-.catch(err=>{
-    console.log(err)
-})
-
-fetch("https://dattebayo-api.onrender.com/characters")
-.then((response)=>{
-    return response.json()
-})
-.then((text)=>{
-    data['animeInfo'] = text.characters
-})
-.catch(err=>{
-    console.log(err)
-})
+run();

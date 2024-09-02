@@ -14,6 +14,11 @@
             "date": 1725096137731,
             "name": "/home/juhi/Techs/assignment/question-5-6-7/logs/movie-2024-08-31.log",
             "hash": "205356373abc70fe4c581f63ab32b20cd377478f5535a88ea8992363bb723d26"
+        },
+        {
+            "date": 1725249924806,
+            "name": "/home/juhi/Techs/assignment/question-5-6-7/logs/movie-2024-09-02.log",
+            "hash": "15623bf574c0d0d3ee59ac477cdc9c7622910a2315bafcf96af2fe49c1fda704"
         }
     ],
     "hashType": "sha256"

@@ -62,8 +62,16 @@ module.exports.loginUser = async (req, res) => {
     } 
 }; 
 
-module.exports.logoutUser = async (req, res) => { 
-    res.send("Logged out successfully"); 
+module.exports.logoutUser = async (req, res) => {
+      // Set options for cookies
+        const options = {
+            httpOnly: true,
+            // secure: true, // Enable in a production environment with HTTPS
+        }; 
+    res.status(200)
+    .cookie("accessToken", options)
+    .cookie("refreshToken", options)
+    .send("Logged out successfully"); 
 }; 
 
 module.exports.refreshToken = async (req, res) => { 

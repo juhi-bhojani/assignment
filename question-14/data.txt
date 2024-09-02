@@ -1,17 +1,40 @@
-Backend Configuration File
+Git structure and Managment
 
+Branching Strategy
 
+1. Main Branch
+    Contains production ready code and contains production ready code
+2. Develop Branch
+    Branch to integrate different features. May not be as stable as main Branch
+3. Feature Branch
+    Branch used to add features to project.
+4. Release Branch
+    Derived from develop branch and used for staging/ testing/QA
+5. BugFix Branch
+    Used to fix a bug in DEV and is merged with release for testing before final merge
+6. Hotfix Branching
+    Used to fix a bug in PROD env after deployment
 
--- config
-    -- dev.env
-    -- prod.env     
--- src
-    -- controllers
-    -- models
-    -- middlware
-    -- routes
-    -- index/app.js
--- node_modules
--- package.json
--- package-lock.json
--- .gitignore
+FEATURE DEVELOPMENT WORKFLOW
+
+Steps:
+    a. Clone from develop branch
+    b. Create a feature branch and add necessary features
+    c. Merge to develop based on PR approval
+    d. Merge to release branch for testing/QA
+    e. Merge with Main branch
+
+RELEASE WORKFLOW
+
+Steps:
+    a. Create a clone from develop for a release branch
+    b. Perform testing and QA and if needed a bugfix branch.
+    c. Merge release to Main branch
+    d. Post release also merge with Develop branch
+
+HOTFIX WORKFLOW
+
+Steps: 
+    a. Create a hotfix branch from main
+    b. Create PR and merge with main
+    c. Post merge with, also merge with Develop branch
